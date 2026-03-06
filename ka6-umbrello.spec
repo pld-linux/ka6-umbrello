@@ -1,3 +1,6 @@
+# Conditional build:
+%bcond_with  apidocs           # build API docs
+
 %define		kdeappsver	25.12.3
 %define		kframever	6.22.0
 %define		qtver		6.10.0
@@ -102,7 +105,9 @@ Dane dla %{kaname}.
 	-G Ninja \
 	-DKDE_INSTALL_DOCBUNDLEDIR=%{_kdedocdir} \
 	-DKDE_INSTALL_USE_QT_SYS_PATHS=ON \
-	-DQT_MAJOR_VERSION=6
+	-DQT_MAJOR_VERSION=6 \
+	%{!?with_apidocs:-DBUILD_APIDOC=OFF}
+
 %ninja_build -C build
 
 %install
@@ -126,9 +131,11 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/umbrello6
 %attr(755,root,root) %{_bindir}/xmi2pot6
 
+%if %{with apidocs}
 %files apidocs
 %defattr(644,root,root,755)
 %{_datadir}/umbrello6/apidoc
+%endif
 
 %files data -f %{kaname}.lang
 %defattr(644,root,root,755)
@@ -138,5 +145,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_iconsdir}/hicolor/scalable/apps/umbrello.svgz
 %{_datadir}/metainfo/org.kde.umbrello.appdata.xml
 %{_datadir}/umbrello6
-%exclude %{_datadir}/umbrello6/apidoc
-%{_docdir}/qt6-doc/umbrello.qch
+#%exclude %{_datadir}/umbrello6/apidoc
+#%{_docdir}/qt6-doc/umbrello.qch
