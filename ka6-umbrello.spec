@@ -24,7 +24,6 @@ BuildRequires:	Qt6Xml-devel
 BuildRequires:	clang-devel >= 2.8.12
 BuildRequires:	cmake >= 3.20
 BuildRequires:	gettext-devel
-BuildRequires:	ka6-kdevelop-devel >= 5.1.2
 BuildRequires:	kf6-extra-cmake-modules >= %{kframever}
 BuildRequires:	kf6-karchive-devel >= %{kframever}
 BuildRequires:	kf6-kcompletion-devel >= %{kframever}
@@ -43,7 +42,6 @@ BuildRequires:	kf6-kwidgetsaddons-devel >= %{kframever}
 BuildRequires:	kf6-kwindowsystem-devel >= %{kframever}
 BuildRequires:	kf6-kxmlgui-devel >= %{kframever}
 BuildRequires:	kf6-syntax-highlighting-devel >= %{kframever}
-BuildRequires:	kf6-threadweaver-devel >= %{kframever}
 BuildRequires:	libxml2-devel
 BuildRequires:	libxslt-devel
 BuildRequires:	ninja
@@ -52,6 +50,10 @@ BuildRequires:	rpmbuild(macros) >= 1.164
 BuildRequires:	shared-mime-info
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
+%ifarch %{x8664}
+BuildRequires:	ka6-kdevelop-devel >= 5.1.2
+BuildRequires:	kf6-threadweaver-devel >= %{kframever}
+%endif
 Requires(post,postun):	desktop-file-utils
 Requires:	%{name}-data = %{version}-%{release}
 Obsoletes:	ka5-%{kaname} < %{version}
@@ -135,6 +137,7 @@ rm -rf $RPM_BUILD_ROOT
 %files apidocs
 %defattr(644,root,root,755)
 %{_datadir}/umbrello6/apidoc
+%{_docdir}/qt6-doc/umbrello.qch
 %endif
 
 %files data -f %{kaname}.lang
@@ -145,5 +148,3 @@ rm -rf $RPM_BUILD_ROOT
 %{_iconsdir}/hicolor/scalable/apps/umbrello.svgz
 %{_datadir}/metainfo/org.kde.umbrello.appdata.xml
 %{_datadir}/umbrello6
-#%exclude %{_datadir}/umbrello6/apidoc
-#%{_docdir}/qt6-doc/umbrello.qch
