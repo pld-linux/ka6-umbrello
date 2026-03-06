@@ -21,6 +21,7 @@ BuildRequires:	Qt6Xml-devel
 BuildRequires:	clang-devel >= 2.8.12
 BuildRequires:	cmake >= 3.20
 BuildRequires:	gettext-devel
+BuildRequires:	ka6-kdevelop-devel >= 5.1.2
 BuildRequires:	kf6-extra-cmake-modules >= %{kframever}
 BuildRequires:	kf6-karchive-devel >= %{kframever}
 BuildRequires:	kf6-kcompletion-devel >= %{kframever}
@@ -39,6 +40,7 @@ BuildRequires:	kf6-kwidgetsaddons-devel >= %{kframever}
 BuildRequires:	kf6-kwindowsystem-devel >= %{kframever}
 BuildRequires:	kf6-kxmlgui-devel >= %{kframever}
 BuildRequires:	kf6-syntax-highlighting-devel >= %{kframever}
+BuildRequires:	kf6-threadweaver-devel >= %{kframever}
 BuildRequires:	libxml2-devel
 BuildRequires:	libxslt-devel
 BuildRequires:	ninja
