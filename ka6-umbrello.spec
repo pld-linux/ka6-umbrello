@@ -65,12 +65,26 @@ generator. It can create diagrams of software and other systems in the
 industry-standard UML format, and can also generate code from UML
 diagrams in a variety of programming languages.
 
-Features
+Features:
 
 - Supported formats: XMI
 - Several type of diagrams supported: use case, class, sequence,
-  collaboration, state, activity, component, deployment, entity
+  communication, state, activity, component, deployment, entity
   relationship
+
+%description -l pl.UTF-8
+Umbrello jest Unified Modelling Language (UML) (z ang. Językiem do
+Jednolitego Modelowania) i generatorem kodu. Może tworzyć diagramy
+oprogramowania i innych systemów w formacie standardu przemysłowego
+UML, a także generować kod z diagramów UML w wielu językach
+programowania.
+
+Możliwości:
+
+- Obsługiwane formaty: XMI
+- Kilka obsługiwanych rodzajów diagramów: przypadki użycia, klasy,
+  sekwencje, komunikacja, stany, aktywności, składniki, zastosowanie,
+  współzależności obiektów
 
 %package apidocs
 Summary:	Apidocs for %{kaname}
