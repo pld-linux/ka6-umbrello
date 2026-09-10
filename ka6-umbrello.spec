@@ -1,18 +1,18 @@
 # Conditional build:
 %bcond_with  apidocs           # build API docs
 
-%define		kdeappsver	26.08.0
+%define		kdeappsver	26.08.1
 %define		kframever	6.22.0
 %define		qtver		6.10.0
 %define		kaname		umbrello
 Summary:	Umbrello
 Name:		ka6-%{kaname}
-Version:	26.08.0
+Version:	26.08.1
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	b6ccbc7b13faac7804496a9f64462c4a
+# Source0-md5:	997e278fd6867f93f42402195acdec22
 URL:		http://www.kde.org/
 BuildRequires:	Qt6Core-devel >= %{qtver}
 BuildRequires:	Qt6Gui-devel
